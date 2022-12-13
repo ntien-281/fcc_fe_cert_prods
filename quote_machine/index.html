@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Machine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div class="quote-box">
+        <div class="quote-text">
+            <i class="icon fa-solid fa-quote-left"></i>
+            <span id="text"></span>
+            <i class="icon fa-solid fa-quote-right"></i>
+        </div>
+        <div class="quote-author">
+            <i class="fa-solid fa-at"></i>
+            <span id="author"></span>
+        </div>
+        <div class="buttons">
+            <div class="share-buttons">
+                <a class="button" target="_blank" id="tweet-quote">
+                    <i class="icon share-icon fa-brands fa-twitter"></i>
+                </a>
+                <a class="button" target="_blank" id="tumblr-quote">
+                    <i class="icon share-icon fa-brands fa-tumblr"></i>
+                </a>
+            </div>
+            <button class="button" id="new-quote">
+                New Quote
+            </button>
+        </div>
+    </div>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap'); </style>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins&display=swap'); </style>
+</body>
+</html>
