@@ -1,0 +1,45 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: #202124;
+  padding-bottom: 40px;
+}
+
+label {
+  margin-top: 50px;
+}
+
+#editor {
+  margin-top: 16px;
+  font-size: 18px;
+  border: none;
+  background-color: black;
+  color: green;
+  box-shadow: 8px 8px 10px 5px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 8px 8px 10px 5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 8px 8px 10px 5px rgba(0,0,0,0.3);
+}
+
+.section-heading {
+  color: seashell;
+  margin-top: 20px;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+#preview {
+  margin-top: 30px;
+  background-color: #fefefe;
+  border-radius: 8px;
+  width: 80%;
+}
+
+#preview > * {
+  margin-left: 8px;
+}
