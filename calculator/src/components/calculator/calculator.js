@@ -1,9 +1,13 @@
 import Keyboard from "../keyboard/keyboard"
+import Screen from "../screen/screen";
 
 export default function Calculator() {
 
 
   return (
-    <Keyboard />
+    <div className="container">
+      <Screen />
+      <Keyboard />
+    </div>
   );
 }
