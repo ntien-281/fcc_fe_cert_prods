@@ -1,0 +1,15 @@
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock-container {
+  padding: 20px 40px;
+  background-color: #F0997D;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 6px 12px;
+}
+
+/*# sourceMappingURL=style.css.map */
