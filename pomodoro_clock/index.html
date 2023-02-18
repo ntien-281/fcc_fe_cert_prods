@@ -13,16 +13,33 @@
   
   <div class="clock-container">
 
-    <div class="length-control">
+    <div class="timer-wrapper">
+
+      <div id="timer-label">Session/Break</div>
+      <div id="time-left">25:00</div>
+
+    </div>
+
+    <div class="control-wrapper">
+      <div class="control-panel">
+        <button id="start-stop">></button>
+        <button id="reset">#</button>
+      </div>
+    </div>
+
+    <div class="setting-wrapper">
       <div class="break-length">
         <div id="break-label">Break Length</div>
-        <button id="break-decrement"></button>
-        <button id="break-increment"></button>
+        <div class="current-break">5</div>
+        <button id="break-decrement">-</button>
+        <button id="break-increment">+</button>
       </div>
+
       <div class="session-length">
         <div id="session-label">Session Length</div>
-        <button id="session-decrement"></button>
-        <button id="session-increment"></button>
+        <div class="current-session">25</div>
+        <button id="session-decrement">-</button>
+        <button id="session-increment">+</button>
       </div>
     </div>
 
