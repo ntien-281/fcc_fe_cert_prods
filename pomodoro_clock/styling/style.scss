@@ -1,25 +1,90 @@
-$font-stack: Helvetica, Arial, sans-serif;
+$font-stack: Nunito, Helvetica, Arial, sans-serif;
 $accent-color: #A75D5D;
 $primary-color: #D3756B;
 $background-color: #F0997D;
-$text-color: #FFC3A1;
+$text-color: #FFFFF0;
 $BrightRed: #F24621;
 
+// Basic
+html {
+  font-family: $font-stack;
+  color: $text-color;
+  text-align: center;
+}
+
+button {
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  margin-inline: 8px;
+}
+
+
 // Mixins
-@mixin theme($bg-color: BrightRed, $box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px) {
+@mixin theme($bg-color: BrightRed, $box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px) {
   background-color: $bg-color;
   box-shadow: $box-shadow;
 }
 
-body {
-  height: 100vh;
+// Extends base
+%flex {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+%wrapper-shared {
+  @extend %flex;
+  @include theme($primary-color);
+  margin-bottom: 15px;
+  padding: 16px 32px;
+  border-radius: 6px;
+}
+
+%vertical-spacing {
+  div {
+    &:nth-child(n) {
+      margin: 8px 0px;
+    }
+  }
+}
+
+// Custom styles
+
+body {
+  height: 100vh;
+  @extend %flex;
+  font-size: 1.4rem;
+}
+
 .clock-container {
   padding: 20px 40px;
   @include theme($background-color);
-  border-radius: 6px 12px;
+  border-radius: 12px;
 }
+
+.timer-wrapper {
+  @extend %wrapper-shared;
+  @extend %vertical-spacing;
+  flex-direction: column;
+}
+
+.control-wrapper {
+  @extend %wrapper-shared;
+}
+
+.setting-wrapper {
+  @extend %wrapper-shared;
+  justify-content: space-between;
+  div {
+    &:nth-child(n) {
+      margin: 0px 16px;
+    }
+  }
+  .break-length,
+  .session-length {
+    @extend %vertical-spacing;
+  }
+}
+
