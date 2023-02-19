@@ -20,6 +20,10 @@ button {
   margin-inline: 8px;
 }
 
+i {
+  font-size: 1.2rem;
+}
+
 
 // Mixins
 @mixin theme($bg-color: BrightRed, $box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px) {
@@ -56,11 +60,15 @@ body {
   height: 100vh;
   @extend %flex;
   font-size: 1.4rem;
+  background-color: #FAACA8;
+  background-image: linear-gradient(58deg, #FAACA8 0%, #DDD6F3 100%);
 }
 
 .clock-container {
   padding: 20px 40px;
   @include theme($background-color);
+  @extend %flex;
+  flex-direction: column;
   border-radius: 12px;
 }
 
@@ -72,6 +80,15 @@ body {
 
 .control-wrapper {
   @extend %wrapper-shared;
+  button#start_stop {
+    i {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+  }
+  
 }
 
 .setting-wrapper {
