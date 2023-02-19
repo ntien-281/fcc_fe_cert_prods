@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pomodoro Clock</title>
-  <script src="main.js"></script>
-  <link rel="stylesheet" href="styling/reset.css">
-  <link rel="stylesheet" href="styling/style.css">
-</head>
-<body>
-  
-  <div class="clock-container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tomato Clock</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="styling/reset.css" />
+    <link rel="stylesheet" href="styling/style.css" />
+    <script
+      src="https://kit.fontawesome.com/1afd3b53e9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="clock-container">
+      <div class="setting-wrapper">
+        <div class="break-wrapper">
+          <div id="break-label">Break Length</div>
+          <div id="break-length">05:00</div>
+          <button id="break-decrement">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <button id="break-increment">
+            <i class="fa-solid fa-chevron-up"></i>
+          </button>
+        </div>
 
-    <div class="timer-wrapper">
+        <div class="session-wrapper">
+          <div id="session-label">Session Length</div>
+          <div id="session-length">25:00</div>
+          <button id="session-decrement">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <button id="session-increment">
+            <i class="fa-solid fa-chevron-up"></i>
+          </button>
+        </div>
+      </div>
 
-      <div id="timer-label">Session/Break</div>
-      <div id="time-left">25:00</div>
+      <div class="timer-wrapper">
+        <div id="timer-label">Session/Break</div>
+        <div id="time-left">25:00</div>
+      </div>
 
+      <div class="control-wrapper">
+        <div class="control-panel">
+          <button id="start_stop">
+            <i class="fa-solid fa-pause"></i>
+            <i class="fa-solid fa-play active"></i>
+          </button>
+          <button id="reset">
+            <i class="fa-solid fa-rotate-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sound -->
+      <audio
+        id="beep"
+        preload="auto"
+        src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+      ></audio>
     </div>
 
-    <div class="control-wrapper">
-      <div class="control-panel">
-        <button id="start-stop">></button>
-        <button id="reset">#</button>
-      </div>
-    </div>
-
-    <div class="setting-wrapper">
-      <div class="break-length">
-        <div id="break-label">Break Length</div>
-        <div class="current-break">5</div>
-        <button id="break-decrement">-</button>
-        <button id="break-increment">+</button>
-      </div>
-
-      <div class="session-length">
-        <div id="session-label">Session Length</div>
-        <div class="current-session">25</div>
-        <button id="session-decrement">-</button>
-        <button id="session-increment">+</button>
-      </div>
-    </div>
-
-  </div>
-
-
-  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-</body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
 </html>

@@ -1,9 +1,9 @@
 $font-stack: Nunito, Helvetica, Arial, sans-serif;
-$accent-color: #A75D5D;
-$primary-color: #D3756B;
-$background-color: #F0997D;
-$text-color: #FFFFF0;
-$BrightRed: #F24621;
+$accent-color: #a75d5d;
+$primary-color: #d3756b;
+$background-color: rgba(240, 153, 125, 0.7);
+$text-color: #fffff0;
+$BrightRed: #f24621;
 
 // Basic
 html {
@@ -18,15 +18,26 @@ button {
   border: none;
   padding: 10px 20px;
   margin-inline: 8px;
+  background-clip: border-box;
+  background: linear-gradient(90deg, $background-color 50%, $text-color 0)
+    var(--_p, 100%) / 200% no-repeat;
+  transition: 0.2s;
+  &:hover {
+    --_p: 0%;
+    color: $text-color;
+    cursor: pointer;
+  }
 }
 
 i {
   font-size: 1.2rem;
 }
 
-
 // Mixins
-@mixin theme($bg-color: BrightRed, $box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px) {
+@mixin theme(
+  $bg-color: BrightRed,
+  $box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px
+) {
   background-color: $bg-color;
   box-shadow: $box-shadow;
 }
@@ -40,7 +51,7 @@ i {
 
 %wrapper-shared {
   @extend %flex;
-  @include theme($primary-color);
+  @include theme($primary-color, none);
   margin-bottom: 15px;
   padding: 16px 32px;
   border-radius: 6px;
@@ -49,7 +60,7 @@ i {
 %vertical-spacing {
   div {
     &:nth-child(n) {
-      margin: 8px 0px;
+      margin: 12px 0px;
     }
   }
 }
@@ -60,8 +71,8 @@ body {
   height: 100vh;
   @extend %flex;
   font-size: 1.4rem;
-  background-color: #FAACA8;
-  background-image: linear-gradient(58deg, #FAACA8 0%, #DDD6F3 100%);
+  background-color: #faaca8;
+  background-image: linear-gradient(58deg, #faaca8 0%, #ddd6f3 100%);
 }
 
 .clock-container {
@@ -70,12 +81,15 @@ body {
   @extend %flex;
   flex-direction: column;
   border-radius: 12px;
+  backdrop-filter: blur(13px);
 }
 
 .timer-wrapper {
   @extend %wrapper-shared;
   @extend %vertical-spacing;
   flex-direction: column;
+  width: 60%;
+  border: 4px solid #ddd6f3;
 }
 
 .control-wrapper {
@@ -88,7 +102,6 @@ body {
       display: block;
     }
   }
-  
 }
 
 .setting-wrapper {
@@ -99,9 +112,16 @@ body {
       margin: 0px 16px;
     }
   }
-  .break-length,
-  .session-length {
+  .break-wrapper,
+  .session-wrapper {
     @extend %vertical-spacing;
   }
 }
 
+#break-length,
+#session-length,
+#time-left {
+  color: #183a1d;
+  font-weight: 800;
+  font-size: 1.9rem;
+}
